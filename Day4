@@ -5,3 +5,21 @@ NB: Remember to update the steps you took
 ls -la /tmp/xfusioncorp.sh 
 sudo chmod 555 /tmp/xfusioncorp.sh 
 ls -la /tmp/xfusioncorp.sh 
+
+steps taken 
+i first cloned the githun repo (https://github.com/Nikiobilor/linux.git) 
+I moved the directory inot my linux directory and deleted the cloned one 
+I listed existing directories using (ls)
+I created the directory correct "tmp" using mkdir
+I verified the directory was created using ls
+I entered the tmp directory using cd tmp
+then created the required file (xfusioncorp.sh) using touch command touch xfusioncorp.sh 
+then listed the file and changed autorisations for the 3 users using sudo chmod 555 insdie the tmp directory
+I listed it using ls -la to see the permissions
+then I moved to the linux directory where which contains this directory tmp
+then i checked the git status
+I tracked using the command git add
+then I did git commit -m "first commit"
+I now pushed to my repo using git push
+
+
