@@ -8,7 +8,7 @@ ls -la /tmp/xfusioncorp.sh
 
 steps taken 
 i first cloned the githun repo (https://github.com/Nikiobilor/linux.git) 
-I moved the directory inot my linux directory and deleted the cloned one 
+I moved the directory into my linux directory and deleted the cloned one 
 I listed existing directories using (ls)
 I created the directory correct "tmp" using mkdir
 I verified the directory was created using ls
