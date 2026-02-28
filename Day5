@@ -1,0 +1,129 @@
+You work as the IT staff in a company, a new intern Sam started today.You received an email from HR to create Sam in the system with all the necessary credentials.
+Create user Sam
+Give Sam password Sam#123
+Create group interns
+Add Sam to the interns group 
+Grant group interns read only priviledges to the /tmp folder your created in Day4
+NB: Kindly outline the steps you took to finish this task.
+# Lab Report: Granting `interns` Group Read-Only Access to `tmp` Directory
+
+**User:** `savetheking@DESKTOP-NVAE0LS`
+**Directory:** `/home/savetheking/linux`
+**Date:** February 28, 2026
+
+---
+
+## Objective
+
+To grant the Linux group `interns` **read-only access** to the `tmp` directory located in `/home/savetheking/linux`.
+
+---
+
+## Procedure
+
+### Step 1: Navigate to Working Directory
+
+```bash
+pwd
+cd linux
+ls
+```
+
+* Verified `tmp` directory exists.
+
+### Step 2: Clone Repository and Organize Files
+
+```bash
+git clone https://github.com/Nikiobilor/linux.git
+mv linux/Day5 ..
+rm -rf linux
+ls
+```
+
+* Ensured folder structure: `Day1–Day5` and `tmp`.
+
+### Step 3: Create New User
+
+```bash
+sudo adduser sam
+```
+
+* Created user `sam` and added to default groups.
+
+### Step 4: Prepare `interns` Group
+
+```bash
+sudo groupadd interns
+getent group interns
+grep interns /etc/group
+# If necessary:
+sudo groupdel interns
+sudo groupadd interns
+```
+
+* Verified existence of `interns` group and recreated it if needed.
+
+### Step 5: Add User to Group
+
+```bash
+sudo usermod -aG interns sam
+```
+
+* User `sam` added to `interns`.
+
+### Step 6: Verify `tmp` Directory
+
+```bash
+ls -l
+```
+
+* Confirmed `tmp` directory exists:
+  `drwxr-xr-x 2 savetheking savetheking 4096 Feb 21 11:59 tmp`
+
+### Step 7: Change Group Ownership
+
+```bash
+sudo chown :interns tmp
+ls -l
+```
+
+* Group ownership changed to `interns`:
+  `drwxr-xr-x 2 savetheking interns 4096 Feb 21 11:59 tmp`
+
+### Step 8: Set Read-Only Permissions
+
+```bash
+sudo chmod 750 tmp
+ls -l
+```
+
+* Permissions assigned:
+
+  * Owner (`savetheking`) → `rwx` (full access)
+  * Group (`interns`) → `r-x` (read & execute)
+  * Others → `---` (no access)
+
+### Step 9: Final Verification
+
+```bash
+ls -ld tmp
+```
+
+* Verified final permissions:
+  `drwxr-x--- 2 savetheking interns 4096 Feb 21 11:59 tmp`
+
+---
+
+## Permission Summary
+
+| User / Group          | Permissions | Description                                     |
+| --------------------- | ----------- | ----------------------------------------------- |
+| Owner (`savetheking`) | `rwx`       | Full access (read, write, execute)              |
+| Group (`interns`)     | `r-x`       | Read-only access (can enter/list, cannot write) |
+| Others                | `---`       | No access                                       |
+
+---
+
+## Result
+
+The `interns` group now has **read-only access** to the `tmp` directory. The owner retains full access, and all other users are restricted from accessing the directory. Task completed successfully.
