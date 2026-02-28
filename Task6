@@ -4,4 +4,49 @@ Create an AWS account using this link  https://aws.amazon.com/
 Download an MFA device on your phone - Google Authenticator or Microsoft Authenticator
 
 
-Steps taken
+Steps taken:
+Steps Taken in ~/linux Directory
+
+1. Listed Existing Directories:
+Command: ls
+Output: Day1  Day2  Day3  Day4  Day5  tmp
+
+2. Renamed Directories:
+Commands:
+mv Day1 Task1
+mv Day2 Task2
+mv Day3 Task3
+mv Day4 Task4
+mv Day5 Task5
+
+3. Confirmed the Rename:
+Command: ls
+Output: Task1  Task2  Task3  Task4  Task5  tmp
+
+4. Created a New File:
+Command: touch Task6
+
+5. Edited the File:
+Command: nano Task6
+(Note: Added 7 lines of content)
+
+6. Staged the File for Git:
+Command: git add Task6
+
+7. Committed the File:
+Command: git commit -m "first commit"
+Git Output:
+[main 5fc3082] first commit
+ 1 file changed, 7 insertions(+)
+ create mode 100644 Task6
+
+8. Pushed to GitHub:
+Command: git push
+Git Output:
+To https://github.com/SecuretheKing/Linux.git
+   a88c7b1..5fc3082  main -> main
+
+Summary:
+- Renamed directories Day1-Day5 → Task1-Task5
+- Created and edited Task6
+- Added, committed, and pushed Task6 to GitHub
