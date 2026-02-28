@@ -50,3 +50,7 @@ Summary:
 - Renamed directories Day1-Day5 → Task1-Task5
 - Created and edited Task6
 - Added, committed, and pushed Task6 to GitHub
+usihn this commamds:
+ git add .
+ git commit -m "first commit"
+ git push
